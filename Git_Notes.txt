@@ -38,7 +38,7 @@ The main difference between the git and the other VCSs is the way git thinks abo
 data. Conceptually most other systems store information as a list of file-based changes.
 These other systems think of the information they store as a set of files and the 
 changes made to each file over the time. --> delta based version control.
-											 ----------------------------
+                                             ----------------------------
 CVS, subversion, Perforce, Bazaar belong to the above category.
 
 Git doesnot think of its data like that. It considers its data like a series of a 
@@ -85,6 +85,46 @@ The basic Git workflow goes something like this:
 
 First-Time Git Setup:
 ---------------------
+Git comes with a tool called 'git config' that lets you get and set all the
+configuration variables that control all the aspects of how Git looks and operates.
+These variables can be stored in three different places:
+
+	1. /etc/gitconfig file, in windows we can edit the file in windows using the
+	command 'notepad ~/.gitconfig' or using the command 'vim ~/.gitconfig' from
+	git bash terminal. The location of the file will be '/c/Users/<User_Name>'.
+	Passing the '--system' to the 'git config', it reads and write from this file.
+		|--> system configuration file. need admin privileges to edit the file.
+	
+	2. '~/.gitconfig' or '~/.config/git/config' file: Values specific personally to
+	you, the user. You can make Git read and write to this file specifically by 
+	passing the '--global' option.
+
+	3. config file in the Git directory (that is, .git/config) of whatever repository
+	you're currently using: Specific to that single repository.
+
+Each level overrides values in the previous level, so values in .git/config trump 
+those in /etc/gitconfig.
+
+Your Identity:
+--------------
+To set the user name and the email for the git:
+$ git config --global user.name "Test User"
+$ git config --global user.email testuser@example.com
+
+Your Editor:
+------------
+To set the default text editor that will be used when Git needs you to type in a 
+message:
+	$ git config --global core.editor vim --> set the default editor to vim.
+
+Checking Your Settings:
+-----------------------
+To check the git config settings, run the command:
+'git config --list'
+
+-------------------
+| ** GIT BASICS ** |
+-------------------
 
 
 
