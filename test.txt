@@ -1,3 +1,4 @@
 This is the test file to work with the local repository.
 This is the new line that is added.
 This is another new line...
+--> Fourth line <--
